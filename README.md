@@ -33,12 +33,13 @@ In this case, the user closely matches the anime expression, resulting in a 100%
 
 
 
-
 # Deployment
 In total, two AWS lambda functions, one docker image (pushed to Amazon ECR), 2 S3 buckets(one for anime image store, one for webpage public access)
 
 ## Lambda: AnimeSelectionCode
+Code file can be found in ./AnimeSelectionLmabda_public.py
 Note!  
+Add your own S3 bucket name:  
 BUCKET_NAME = "——yourAnimeImageBucketName——"
 
 ## Lambda: Custom Mediapipe Docker integration 
