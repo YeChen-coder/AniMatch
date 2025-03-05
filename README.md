@@ -9,6 +9,7 @@ Datasets source: “Tagged Anime Illustrations” (Kaggle) and Google Custom Sea
 
 
 # Deployment
+In total, two AWS lambda function, one docker image (pushed to Amazon ECR), 2 S3 buckets(one for anime image store, one for webpage public access)
 
 NOTE!
 Add your own api in index.html:const RANDOM_ANIME_API = "————your_lambda_link————";
