@@ -29,7 +29,7 @@ he closer the values, the higher the score.
 Given the cross-domain comparison between human faces and anime characters, we map openness values as follows:  
 If the value is less than or equal to 0.2, we consider it closed (zero).If the value is greater then or equal to 0.8, we consider it open (one).Everything in between remains unchanged. 
 In this case, the user closely matches the anime expression, resulting in a 100% score.
-<img src="./ReadmeRelatedImages/SimilarityFormulation.pngg" width="900" /> 
+<img src="./ReadmeRelatedImages/SimilarityFormulation.png" width="900" /> 
 
 
 
