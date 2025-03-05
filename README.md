@@ -22,6 +22,14 @@ It pulls a Docker container— one that we built from scratch, packaged with a M
 Inside this container, the Mediapipe model  identifying key expressions of eye and mouth,  returning these features back.  
 At this point, we have both the anime expression and user's landmarks ready, so we can now compute the similarity score.  
 
+## Scoreing Formulation
+
+The logic behind calculation is pretty neat, only by comparing eye and mouth openness.  T
+he closer the values, the higher the score.  
+Given the cross-domain comparison between human faces and anime characters, we map openness values as follows:  
+If the value is less than or equal to 0.2, we consider it closed (zero).If the value is greater then or equal to 0.8, we consider it open (one).Everything in between remains unchanged. 
+In this case, the user closely matches the anime expression, resulting in a 100% score.
+<img src="./ReadmeRelatedImages/SimilarityFormulation.pngg" width="900" /> 
 
 
 
