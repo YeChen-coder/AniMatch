@@ -9,8 +9,20 @@ This demo using predefined anime labels and mediapipe model for game score calcu
 # Files/Datasets
 
 Datasets source: “Tagged Anime Illustrations” (Kaggle) and Google Custom Search
+
+## Anime image selection
 <img src="./ReadmeRelatedImages/HumanLandmark.png" width="900" />  
-<img src="./ReadmeRelatedImages/RandomAnimeSelection.png" width="900" />  
+The first one handles anime image selection. When a user clicks 'Get Random Anime Image,' an API call triggers an AWS Lambda function.  
+The function selects an image from an S3 bucket, where images are organized into labeled folders.  
+With the anime image selected, the next step is analyzing human face:  
+## Mediapipe docker integration
+<img src="./ReadmeRelatedImages/RandomAnimeSelection.png" width="900" /> 
+When a user uploads a photo, another AWS Lambda function is triggered.   
+It pulls a Docker container— one that we built from scratch, packaged with a Mediapipe model, and then pushed to Amazon ECR.  
+Inside this container, the Mediapipe model  identifying key expressions of eye and mouth,  returning these features back.  
+At this point, we have both the anime expression and user's landmarks ready, so we can now compute the similarity score.  
+
+
 
 
 
