@@ -1,5 +1,7 @@
 # AniMatch is a AWS based server-less party game demo
-This demo using predefined anime labels and mediapipe model for game score calculation.
+This demo using predefined anime labels and mediapipe model for game score calculation.  
+As Albert Einstein said, engineers should keep things as simple as possible.  
+Thus, we use serverless services to avoiding maintance of whole instance.
 ## High-Level Architecture
 🎯 Step 1: Website select a random anime image from S3;  
 📤 Step 2: User uploads his/her own photo;  
@@ -24,8 +26,8 @@ At this point, we have both the anime expression and user's landmarks ready, so 
 
 ## Scoreing Formulation
 
-The logic behind calculation is pretty neat, only by comparing eye and mouth openness.  T
-he closer the values, the higher the score.  
+The logic behind calculation is pretty neat, only by comparing eye and mouth openness.  
+The closer the values, the higher the score.  
 Given the cross-domain comparison between human faces and anime characters, we map openness values as follows:  
 If the value is less than or equal to 0.2, we consider it closed (zero).If the value is greater then or equal to 0.8, we consider it open (one).Everything in between remains unchanged. 
 In this case, the user closely matches the anime expression, resulting in a 100% score.
@@ -44,12 +46,16 @@ BUCKET_NAME = "——yourAnimeImageBucketName——"
 
 ## Lambda: Custom Mediapipe Docker integration 
 ### Docker package
+Docker file can be found in folder ./MediapipeDockerRawFiles/  
+Highly recommend user to compile in EC2 instance to reduce incomplicity, since lambda funcion's original environemt is EC2.
 ### Push to AWS ECR
-
+Command can be found in https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html.
 
 ## Frontend page 
+Frontend page can be found in ./index-noprivacy.html
+
 ### HTTP API 
-As Albert E..
+
 
 NOTE!  
 Add your own api in index.html:  
