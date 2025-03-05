@@ -37,8 +37,13 @@ In this case, the user closely matches the anime expression, resulting in a 100%
 # Deployment
 In total, two AWS lambda functions, one docker image (pushed to Amazon ECR), 2 S3 buckets(one for anime image store, one for webpage public access)
 
+## Frontend page 
+### HTTP API 
+As Albert E..
+
 NOTE!  
 Add your own api in index.html:const RANDOM_ANIME_API = "————your_lambda_link————";  
 const MEDIAPIPE_API    = "————your_lambda_link————";  
 
-
+## Docker package
+### Push to AWS ECR
