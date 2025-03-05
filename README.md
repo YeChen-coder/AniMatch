@@ -36,7 +36,7 @@ In this case, the user closely matches the anime expression, resulting in a 100%
 
 
 # Deployment
-In total, two AWS lambda functions, one docker image (pushed to Amazon ECR), 2 S3 buckets(one for anime image store, one for webpage public access)
+In total, two AWS lambda functions, one docker image (pushed to Amazon ECR), 2 S3 buckets(one for anime image store, one for webpage public access), 2 API gateway.
 
 ## Lambda: AnimeSelectionCode
 Code file can be found in ./AnimeSelectionLmabda_public.py
@@ -55,7 +55,7 @@ Command can be found in https://docs.aws.amazon.com/AmazonECR/latest/userguide/d
 Frontend page can be found in ./index-noprivacy.html
 
 ### HTTP API 
-
+We use HTTP API to trigger Lambda function, so please remember to create two API Gateways.  
 
 NOTE!  
 Add your own api in index.html:  
