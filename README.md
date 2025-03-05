@@ -9,3 +9,10 @@ Datasets source: “Tagged Anime Illustrations” (Kaggle) and Google Custom Sea
 
 
 # Deployment
+
+NOTE!
+Add your own api in index.html
+===
+  const RANDOM_ANIME_API = "————your_lambda_link————";
+  const MEDIAPIPE_API    = "————your_lambda_link————";
+===
