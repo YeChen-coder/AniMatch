@@ -62,7 +62,34 @@ Add your own api in index.html:
 const RANDOM_ANIME_API = "————your_lambda_link————";  
 const MEDIAPIPE_API    = "————your_lambda_link————";  
 
+# What's more  
+## Identification of Mediapipe landmark
 
+# Mediapipe Face Geometry - Mouth Region Analysis
+
+The following image is from the Mediapipe repository:
+
+[**canonical_face_model_uv_visualization.png**](https://github.com/google-ai-edge/mediapipe/blob/a908d668c730da128dfa8d9f6bd25d519d006692/mediapipe/modules/face_geometry/data/canonical_face_model_uv_visualization.png)  
+_Source: [google-ai-edge/mediapipe](https://github.com/google-ai-edge/mediapipe)_
+
+## Mouth Region:
+
+### Left and Right Points:
+- **Index 78**: (x = 0.4555, y = 0.3861, z = 0.0045)
+- **Index 308**: (x = 0.5305, y = 0.3822, z = 0.0074)
+
+### Upper and Lower Points:
+- **Index 13**: (x = 0.4961, y = 0.3873, z = -0.0112)
+- **Index 14**: (x = 0.4960, y = 0.3874, z = -0.0129)
+
+## Mouth Open Calculation:
+
+The **mouthOpen** logic has been implemented since the **BlendShape-based mouthClose** detection was inaccurate. Instead, the mouth openness is calculated directly using **facemask indices**, similar to how it is done in animation.
+
+### Calculation Logic:
+Mouth openness is determined by the **vertical distance between the upper and lower lips** divided by the **horizontal distance between the left and right corners of the mouth**.
+
+![Mouth Open Visualization](https://github.com/user-attachments/assets/7c0b961a-0c71-45e5-bf5d-b73beeea6d16)
 
 
 
