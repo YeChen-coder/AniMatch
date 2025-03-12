@@ -73,6 +73,7 @@ The following image is from the Mediapipe repository:
 _Source: [google-ai-edge/mediapipe](https://github.com/google-ai-edge/mediapipe)_
 
 ## Mouth Region:
+<img src="./ReadmeRelatedImages/MediapipeMouseLandmark.png" width="900" /> 
 
 ### Left and Right Points:
 - **Index 78**: (x = 0.4555, y = 0.3861, z = 0.0045)
@@ -84,12 +85,11 @@ _Source: [google-ai-edge/mediapipe](https://github.com/google-ai-edge/mediapipe)
 
 ## Mouth Open Calculation:
 
-The **mouthOpen** logic has been implemented since the **BlendShape-based mouthClose** detection was inaccurate. Instead, the mouth openness is calculated directly using **facemask indices**, similar to how it is done in animation.
+Note that the **mouthOpen** logic has been implemented since the **BlendShape-based mouthClose** detection was inaccurate. Instead, the mouth openness is calculated directly using **facemask indices**, similar to how it is done in animation.
+I would highly recommend to set dual logic to reduce error.
 
 ### Calculation Logic:
 Mouth openness is determined by the **vertical distance between the upper and lower lips** divided by the **horizontal distance between the left and right corners of the mouth**.
-
-![Mouth Open Visualization](https://github.com/user-attachments/assets/7c0b961a-0c71-45e5-bf5d-b73beeea6d16)
 
 
 
